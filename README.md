@@ -4,8 +4,8 @@ This is an online art gallery where the site will have curators and regular user
 
 ## Functional
 
-- [ ] Allow new user registration.
-- [ ] Authentication via login (email/username and password).
+- [x] Allow new user registration.
+- [x] Authentication via login (email/username and password).
 - [ ] Password recovery option.
 - [ ] Allow users to edit their profiles (profile picture, bio, etc.).
 - [ ] Display profile information of other users (name, bio, submitted images, etc.).
