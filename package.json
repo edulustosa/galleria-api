@@ -6,8 +6,7 @@
     "start": "node dist/server.js",
     "start:dev": "tsx src/server.ts",
     "build": "tsup src",
-    "test": "vitest run",
-    "test:watch": "vitest"
+    "test": "vitest"
   },
   "author": "Eduardo Lustosa",
   "license": "MIT",
