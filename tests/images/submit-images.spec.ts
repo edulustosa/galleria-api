@@ -17,7 +17,7 @@ describe('Submit image use-case', () => {
       passwordHash: await hash('12345678', 6),
     })
 
-    const image = await sut.execute({
+    const image = await sut.send({
       userId: user.id,
       title: 'artwork',
       url: 'https://image_url.com',
@@ -32,5 +32,30 @@ describe('Submit image use-case', () => {
         status: Status.PENDING,
       }),
     )
+  })
+
+  it('should be able to cancel a submission', async () => {
+    const user = await usersRepository.create({
+      username: 'John Doe',
+      email: 'johndoe@example.com',
+      passwordHash: await hash('12345678', 6),
+    })
+
+    const image = await sut.send({
+      userId: user.id,
+      title: 'artwork',
+      url: 'https://image_url.com',
+    })
+
+    const deletedImage = await sut.cancel({
+      imageId: image.id,
+      userId: user.id,
+    })
+
+    expect(deletedImage).toEqual(image)
+
+    const checkImage = await imagesRepository.findById(image.id)
+
+    expect(checkImage).toBe(null)
   })
 })

@@ -8,4 +8,20 @@ export default class PrismaImagesRepository implements ImagesRepository {
 
     return image
   }
+
+  async findById(id: string) {
+    const image = await prisma.image.findUnique({
+      where: { id },
+    })
+
+    return image
+  }
+
+  async findByIdAndDelete(id: string) {
+    const deletedImage = await prisma.image.delete({
+      where: { id },
+    })
+
+    return deletedImage
+  }
 }

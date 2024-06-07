@@ -15,3 +15,15 @@ export class ResourceNotFoundError extends Error {
     super('Resource not found.')
   }
 }
+
+export class ImageAlreadyEvaluatedError extends Error {
+  constructor() {
+    super('Image alreadyEvaluated.')
+  }
+}
+
+export class ImageDoesNotBelongToUserError extends Error {
+  constructor() {
+    super('The image does not belong to the user.')
+  }
+}

@@ -1,6 +1,11 @@
 import type ImagesRepository from '@/repositories/images-repository'
 import type UsersRepository from '@/repositories/users-repository'
-import { ResourceNotFoundError } from '../errors'
+import {
+  ImageAlreadyEvaluatedError,
+  ImageDoesNotBelongToUserError,
+  ResourceNotFoundError,
+} from '../errors'
+import { Status } from '@prisma/client'
 
 interface SubmitImageRequest {
   userId: string
@@ -8,6 +13,11 @@ interface SubmitImageRequest {
   author?: string
   description?: string
   url: string
+}
+
+interface CancelSubmissionRequest {
+  imageId: string
+  userId: string
 }
 
 export default class SubmitImageUseCase {
@@ -22,13 +32,7 @@ export default class SubmitImageUseCase {
     this.usersRepository = usersRepository
   }
 
-  async execute({
-    userId,
-    title,
-    author,
-    description,
-    url,
-  }: SubmitImageRequest) {
+  async send({ userId, title, author, description, url }: SubmitImageRequest) {
     const user = await this.usersRepository.findById(userId)
 
     if (!user) throw new ResourceNotFoundError()
@@ -42,5 +46,23 @@ export default class SubmitImageUseCase {
     })
 
     return image
+  }
+
+  async cancel({ imageId, userId }: CancelSubmissionRequest) {
+    const image = await this.imagesRepository.findById(imageId)
+
+    if (!image) throw new ResourceNotFoundError()
+
+    if (image.userId !== userId) {
+      throw new ImageDoesNotBelongToUserError()
+    }
+
+    if (image.status !== Status.PENDING) {
+      throw new ImageAlreadyEvaluatedError()
+    }
+
+    const deletedImage = await this.imagesRepository.findByIdAndDelete(imageId)
+
+    return deletedImage
   }
 }
