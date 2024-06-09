@@ -15,7 +15,7 @@ enum Role {
 
 enum Status {
   PENDING
-  APROVED
+  APPROVED
   REJECT
 }
 

@@ -9,7 +9,7 @@ This is an online art gallery where the site will have curators and regular user
 - [ ] Password recovery option.
 - [x] Allow users to edit their profiles (profile picture, bio, etc.).
 - [x] Display profile information of other users (name, bio, submitted images, etc.).
-- [ ] Allow registered users to submit images.
+- [x] Allow registered users to submit images.
 - [ ] Submission form with fields for title and description.
 - [ ] Interface for curators to review and approve/reject submitted images.
 - [ ] Notify users about the approval or rejection of their images.
