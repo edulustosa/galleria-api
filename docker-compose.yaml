@@ -1,6 +1,7 @@
 services:
   galleria-pg:
     image: bitnami/postgresql
+    container_name: galleria-db
     ports:
       - 5432:5432
     environment:

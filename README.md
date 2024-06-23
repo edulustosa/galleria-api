@@ -4,12 +4,12 @@ This is an online art gallery where the site will have curators and regular user
 
 ## Functional
 
-- [x] Allow new user registration.
-- [x] Authentication via login (email/username and password).
+- [ ] Allow new user registration.
+- [ ] Authentication via login (email/username and password).
 - [ ] Password recovery option.
-- [x] Allow users to edit their profiles (profile picture, bio, etc.).
-- [x] Display profile information of other users (name, bio, submitted images, etc.).
-- [x] Allow registered users to submit images.
+- [ ] Allow users to edit their profiles (profile picture, bio, etc.).
+- [ ] Display profile information of other users (name, bio, submitted images, etc.).
+- [ ] Allow registered users to submit images.
 - [ ] Submission form with fields for title and description.
 - [ ] Interface for curators to review and approve/reject submitted images.
 - [ ] Notify users about the approval or rejection of their images.
@@ -22,6 +22,8 @@ This is an online art gallery where the site will have curators and regular user
 - [ ] The database must be hosted on Vercel.
 - [ ] Data should be stored in a PostgreSQL database.
 - [ ] Users should be identified by a JWT.
+- [ ] Database management using GORM
+- [ ] HTTP request management using Gin
 
 ## Business Rules
 
