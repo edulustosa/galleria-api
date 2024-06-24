@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/edulustosa/galleria-api/pkg/db"
-	"github.com/edulustosa/galleria-api/pkg/env"
+	"github.com/edulustosa/galleria-api/internal/db"
+	"github.com/edulustosa/galleria-api/internal/env"
 )
 
 func main() {

@@ -4,13 +4,13 @@ import (
 	"testing"
 
 	"github.com/edulustosa/galleria-api/internal/services"
-	"github.com/edulustosa/galleria-api/pkg/repositories"
+	"github.com/edulustosa/galleria-api/internal/repositories"
 )
 
 func TestRegister(t *testing.T) {
 	db := SetupTestDB()
 
-	usersRepository := repositories.NewUserRepository(db)
+	usersRepository := repositories.NewUsersRepository(db)
 	sut := services.NewAuth(usersRepository)
 
 	req := services.RegisterRequest{
@@ -30,7 +30,7 @@ func TestRegister(t *testing.T) {
 func TestRegisterFail(t *testing.T) {
 	db := SetupTestDB()
 
-	usersRepository := repositories.NewUserRepository(db)
+	usersRepository := repositories.NewUsersRepository(db)
 	sut := services.NewAuth(usersRepository)
 
 	req := services.RegisterRequest{
@@ -51,7 +51,7 @@ func TestRegisterFail(t *testing.T) {
 func TestLogin(t *testing.T) {
 	db := SetupTestDB()
 
-	usersRepository := repositories.NewUserRepository(db)
+	usersRepository := repositories.NewUsersRepository(db)
 	sut := services.NewAuth(usersRepository)
 
 	req := services.RegisterRequest{
@@ -82,7 +82,7 @@ func TestLogin(t *testing.T) {
 func TestLoginFail(t *testing.T) {
 	db := SetupTestDB()
 
-	usersRepository := repositories.NewUserRepository(db)
+	usersRepository := repositories.NewUsersRepository(db)
 	sut := services.NewAuth(usersRepository)
 
 	req := services.RegisterRequest{

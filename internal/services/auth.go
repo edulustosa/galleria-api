@@ -3,8 +3,8 @@ package services
 import (
 	"errors"
 
-	"github.com/edulustosa/galleria-api/pkg/models"
-	"github.com/edulustosa/galleria-api/pkg/repositories"
+	"github.com/edulustosa/galleria-api/internal/models"
+	"github.com/edulustosa/galleria-api/internal/repositories"
 	"golang.org/x/crypto/bcrypt"
 )
 

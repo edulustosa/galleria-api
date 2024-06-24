@@ -4,11 +4,11 @@ This is an online art gallery where the site will have curators and regular user
 
 ## Functional
 
-- [ ] Allow new user registration.
-- [ ] Authentication via login (email/username and password).
+- [x] Allow new user registration.
+- [x] Authentication via login (email/username and password).
 - [ ] Password recovery option.
-- [ ] Allow users to edit their profiles (profile picture, bio, etc.).
-- [ ] Display profile information of other users (name, bio, submitted images, etc.).
+- [x] Allow users to edit their profiles (profile picture, bio, etc.).
+- [x] Display profile information of other users (name, bio, submitted images, etc.).
 - [ ] Allow registered users to submit images.
 - [ ] Submission form with fields for title and description.
 - [ ] Interface for curators to review and approve/reject submitted images.

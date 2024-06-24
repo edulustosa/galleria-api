@@ -3,8 +3,8 @@ package test
 import (
 	"log"
 
-	"github.com/edulustosa/galleria-api/pkg/env"
-	"github.com/edulustosa/galleria-api/pkg/models"
+	"github.com/edulustosa/galleria-api/internal/env"
+	"github.com/edulustosa/galleria-api/internal/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
